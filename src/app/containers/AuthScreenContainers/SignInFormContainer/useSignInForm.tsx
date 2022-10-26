@@ -2,6 +2,7 @@ import * as Yup from "yup";
 import { useFormik, FormikProps } from "formik";
 
 import { OnSubmitType } from "../../../types";
+import { FormErrorMessages } from "../../../utils";
 
 export interface SignInFormFields {
   email: string;
@@ -10,11 +11,11 @@ export interface SignInFormFields {
 
 export const signInFormValidationSchema = Yup.object().shape({
   email: Yup.string()
-    .email("Invalid email address")
-    .required("Field could not be blank"),
+    .email(FormErrorMessages.INVALID_EMAIL_ADDRESS)
+    .required(FormErrorMessages.REQUIRED_FIELD),
   password: Yup.string()
-    .min(4, "Must be at least 4 characters")
-    .required("Feild could not be blank"),
+    .min(4, FormErrorMessages.INVALID_PASSWORD_LENGTH)
+    .required(FormErrorMessages.REQUIRED_FIELD),
 });
 
 export const useSignInForm = (
