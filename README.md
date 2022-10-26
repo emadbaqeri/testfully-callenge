@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Testfully Challenge
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -39,8 +39,31 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+All the project components and files are in the app ./src/app folder
+**Note: I would like to separate the project UI and Logic with patterens below
+	1. `Components`: Smallest Parts of the ui that usually do not contain logic
+	2. `Container`: Larget than `components` that are contained with component(s) and we handle logic of the UI there
+	3. `Screens`: We have screens that are contained of `containers`. Screens also should contain logic if needed
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For the folder structure I have decided to keep tests in a single folder but based on the scale of the project and usually I put the test for each component in it's own component folder. The folder structure that I usually utilize in my projects:
+```bash
+	app/
+		component/
+			DummyComponent/
+				index.tsx
+				DummyComponent.test.tsx
+				DummyComponent.storybook.tsx
+				(DummyComponent.utils.tsx)
+```
+
+**Note: For handling the user inputs and forms I have utilized the `Formik`.
+extra node on the form handle hooks:
+	For the small projects I would like to keep custom hooks as close as possible for the components. eg: `useSignInForm` hook which I haven't generated a hooks folder and kept it in the same folder as the container itself
+
+**Note: `src/app/types` folder contains some types that we commonly use in our components and share amongest them
+
+**Note: `src/app/utils` folder containes some utility functions and commonly shared things amongest the components
+
+**Note: For large scale projects I also have `src/config` folder and put my config and configuation related stuff there
