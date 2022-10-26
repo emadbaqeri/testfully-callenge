@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "inter";
+  font-weight: 500;
+  src: url("./fonts/Inter-Regular.woff") format("woff"),
+    url("./fonts/Inter-Regular.woff2") format("woff2");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "inter-bold";
+  font-weight: 700;
+  src: url("./fonts/Inter-Bold.woff") format("woff"),
+    url("./fonts/Inter-Bold.woff2") format("woff2");
 }
